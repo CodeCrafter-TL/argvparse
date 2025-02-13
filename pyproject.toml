@@ -1,25 +1,32 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools]
+[project]
 name = "argvparse"
-version = "1.0.0"
-packages = ["argvparse"]
-long_description = "file: README.md"
-long_description_content_type = "text/markdown"
-url = "https://github.com/CodeCrafter-TL/argvparse"
-
-[tool.setuptools.package_data]
-include = [
-    "README.md",
-    "LICENSE"
+authors = [{ name = "CodeCrafter-TL", email = "1825456084@qq.com" }]
+maintainers = [{ name = "CodeCrafter-TL", email = "1825456084@qq.com" }]
+description = "Argv parser for Python."
+readme = "README.md"
+license = { text = "MIT License" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Intended Audience :: Developers",
+    "Typing :: Typed",
 ]
+dynamic = ["version"]
 
-[tool.setuptools.classifiers]
-"Programming Language :: Python :: 3"
-"License :: OSI Approved :: MIT License"
-"Operating System :: OS Independent"
+[project.urls]
+"Bug tracker" = "https://github.com/CodeCrafter-TL/argvparse/issues"
+"Source code" = "https://github.com/CodeCrafter-TL/argvparse"
 
-[tool.setuptools.dependencies]
-install_requires = []
+[tool.setuptools.dynamic]
+version = { attr = "argvparse.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["argvparse*"]
